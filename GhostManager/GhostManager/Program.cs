@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SimpleMovementWGravity
+namespace GhostManager
 {
 #if WINDOWS || LINUX
     /// <summary>

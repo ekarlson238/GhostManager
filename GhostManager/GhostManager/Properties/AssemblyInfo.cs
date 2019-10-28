@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SimpleMovementWGravity")]
-[assembly: AssemblyProduct("SimpleMovementWGravity")]
+[assembly: AssemblyTitle("GhostManager")]
+[assembly: AssemblyProduct("GhostManager")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("e215c8ee-3abe-44e5-9591-5315a165fc4c")]
+[assembly: Guid("b34c2212-d048-4e8a-ab5c-a1e90564e6d3")]
 
 // Version information for an assembly consists of the following four values:
 //

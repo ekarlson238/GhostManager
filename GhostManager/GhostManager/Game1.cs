@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace SimpleMovementWGravity
+namespace GhostManager
 {
     /// <summary>
     /// This is the main type for your game.
@@ -11,17 +11,6 @@ namespace SimpleMovementWGravity
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        
-        SpriteFont font;
-
-        PlayerController pacMan;
-        float pacManSpeed = 10;
-        float pacManGravityAccel = 1.8f;
-
-        Input pacManInput;
-        Sprite pacManSprite;
-
-        Vector2 gravDirection;
 
         public Game1()
         {
@@ -37,6 +26,8 @@ namespace SimpleMovementWGravity
         /// </summary>
         protected override void Initialize()
         {
+            // TODO: Add your initialization logic here
+
             base.Initialize();
         }
 
@@ -49,18 +40,7 @@ namespace SimpleMovementWGravity
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            pacManInput = new Input(Keys.W, Keys.S, Keys.A, Keys.D);
-            pacManSprite = new Sprite(Content.Load<Texture2D>("pacManSingle"), new Vector2(GraphicsDevice.Viewport.Width * 0.75f,
-                GraphicsDevice.Viewport.Height / 2), new Vector2(1, 0));
-
-            gravDirection = new Vector2(0, 1);
-
-            //player controller constructor
-            pacMan = new PlayerController(pacManInput, pacManSprite,
-                pacManSpeed, gravDirection, pacManGravityAccel);
-            
-            
-            font = Content.Load<SpriteFont>("Arial");
+            // TODO: use this.Content to load your game content here
         }
 
         /// <summary>
@@ -69,7 +49,7 @@ namespace SimpleMovementWGravity
         /// </summary>
         protected override void UnloadContent()
         {
-
+            // TODO: Unload any non ContentManager content here
         }
 
         /// <summary>
@@ -81,14 +61,8 @@ namespace SimpleMovementWGravity
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            
-            //Elapsed time since last update will be used to correct movement speed
-            float time = (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
-            pacMan.UpdateGravity();
-            pacMan.UpdateLocation(time);
-            pacMan.UpdateKeepOnScreen(GraphicsDevice.Viewport);
-            pacMan.UpdateDirection();
+            // TODO: Add your update logic here
 
             base.Update(gameTime);
         }
@@ -101,18 +75,8 @@ namespace SimpleMovementWGravity
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin();
-            
-            spriteBatch.Draw(pacMan.Sprite().Texture(), pacMan.Sprite().Location(), Color.Red);
-            
-            spriteBatch.DrawString(font,
-                string.Format("Speed:{0}\nDir:{1}\nGravityDir:{2}\nGravtyAccel:{3}",
-                pacManSpeed, pacMan.Sprite().Direction(), pacMan.GravityDirection(), pacMan.GravityAcceleration()),
-                new Vector2(GraphicsDevice.Viewport.Width * 0.6f, 10),
-                Color.White);
+            // TODO: Add your drawing code here
 
-            spriteBatch.End();
-            
             base.Draw(gameTime);
         }
     }
