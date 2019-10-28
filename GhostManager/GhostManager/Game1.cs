@@ -12,10 +12,15 @@ namespace GhostManager
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        GhostManager gm;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            gm = new GhostManager(this, 4);
+            this.Components.Add(gm);
         }
 
         /// <summary>
